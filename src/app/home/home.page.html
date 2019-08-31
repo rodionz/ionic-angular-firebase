@@ -7,8 +7,21 @@
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <form >
+    <ion-list >
+  <ion-item>
+    <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text></ion-label>
+    <ion-input required type="text" #firstNameRef input="handleFirstNameValue($event)"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Last Name <ion-text color="danger">*</ion-text></ion-label>
+    <ion-input required type="text" #lastNameRef input="handleLastNameValue($event)"></ion-input>
+  </ion-item>
+</ion-list>
+<div class="ion-padding">
+    <ion-button expand="block" type="submit" class="ion-no-margin" (click)="processForm(event)">
+       Create account</ion-button>
   </div>
+</form>
+
 </ion-content>
